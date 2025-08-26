@@ -151,13 +151,13 @@ const Projects = () => {
                     <div className="absolute inset-0 bg-gradient-to-tr from-blue-400/10 via-transparent to-purple-400/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                   </div>
                   
-                  {/* GitHub Link - Appears immediately on image hover */}
-                  <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 z-50">
+                  {/* GitHub Link - Always visible on mobile, hover on desktop */}
+                  <div className="absolute top-4 right-4 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-all duration-300 transform translate-y-0 md:translate-y-2 md:group-hover:translate-y-0 z-50">
                     <motion.a
                       href={project.githubUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="block p-3 bg-black/80 backdrop-blur-md rounded-full border border-white/30 hover:bg-black/90 transition-all duration-300 shadow-lg cursor-pointer relative z-50"
+                      className="block p-2.5 md:p-3 bg-black/80 backdrop-blur-md rounded-full border border-white/30 hover:bg-black/90 transition-all duration-300 shadow-lg cursor-pointer relative z-50"
                       whileHover={{ 
                         scale: 1.15, 
                         rotate: 360,
@@ -169,7 +169,7 @@ const Projects = () => {
                         window.open(project.githubUrl, '_blank', 'noopener,noreferrer');
                       }}
                     >
-                      <Github size={20} className="text-white" />
+                      <Github size={18} className="text-white md:w-5 md:h-5" />
                     </motion.a>
                   </div>
                   
