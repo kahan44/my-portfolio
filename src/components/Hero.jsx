@@ -124,20 +124,20 @@ const Hero = () => {
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1, ease: "easeOut" }}
-          className="backdrop-blur-xl bg-white/5 rounded-3xl border border-white/10 p-8 md:p-12 shadow-2xl"
+          className="backdrop-blur-xl bg-white/5 rounded-2xl sm:rounded-3xl border border-white/10 p-4 sm:p-6 md:p-8 lg:p-12 shadow-2xl"
         >
           <motion.div
             variants={itemVariants}
-            className="mb-8"
+            className="mb-6 sm:mb-8"
           >
             <motion.h1
-              className="text-5xl md:text-7xl font-bold mb-6 whitespace-nowrap"
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4 sm:mb-6"
               initial={{ scale: 0.8, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
             >
               <motion.span 
-                className="text-white drop-shadow-2xl"
+                className="text-white drop-shadow-2xl block sm:inline"
                 animate={{ 
                   textShadow: [
                     "0 0 20px rgba(59, 130, 246, 0.5)",
@@ -166,13 +166,13 @@ const Hero = () => {
             </motion.h1>
           </motion.div>
 
-        <motion.div variants={itemVariants} className="mb-8">
-          <div className="text-xl md:text-2xl text-gray-300 mb-4">
+        <motion.div variants={itemVariants} className="mb-6 sm:mb-8">
+          <div className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-300 mb-3 sm:mb-4">
             <motion.span
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.5 }}
-              className="inline-block"
+              className="block sm:inline-block"
             >
               Computer Science Student
             </motion.span>
@@ -180,7 +180,7 @@ const Hero = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.7 }}
-              className="text-blue-400 mx-2"
+              className="text-blue-400 mx-2 hidden sm:inline"
             >
               •
             </motion.span>
@@ -188,7 +188,7 @@ const Hero = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.9 }}
-              className="inline-block"
+              className="block sm:inline-block"
             >
               Problem Solver
             </motion.span>
@@ -196,7 +196,7 @@ const Hero = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.8, delay: 1.1 }}
-              className="text-purple-400 mx-2"
+              className="text-purple-400 mx-2 hidden sm:inline"
             >
               •
             </motion.span>
@@ -204,14 +204,14 @@ const Hero = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.8, delay: 1.3 }}
-              className="inline-block"
+              className="block sm:inline-block"
             >
               Tech Enthusiast
             </motion.span>
           </div>
           <motion.p
             variants={itemVariants}
-            className="text-lg text-gray-400 max-w-2xl mx-auto leading-relaxed"
+            className="text-sm sm:text-base md:text-lg text-gray-400 max-w-2xl mx-auto leading-relaxed px-2 sm:px-0"
           >
             Passionate about Software Engineering, Web Development, and Data Science, with a growing interest in Machine Learning. Driven to build innovative solutions that create real-world impact.
           </motion.p>
@@ -219,11 +219,11 @@ const Hero = () => {
 
         <motion.div
           variants={itemVariants}
-          className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-12"
+          className="flex flex-col items-center justify-center gap-4 sm:gap-6 mb-8 sm:mb-12"
         >
           <motion.button
             onClick={downloadResume}
-            className="relative overflow-hidden bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 px-8 py-4 rounded-full text-white font-medium transition-all duration-300 shadow-lg hover:shadow-2xl backdrop-blur-sm border border-white/10"
+            className="relative overflow-hidden bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 px-6 sm:px-8 py-3 sm:py-4 rounded-full text-white font-medium transition-all duration-300 shadow-lg hover:shadow-2xl backdrop-blur-sm border border-white/10 w-full sm:w-auto max-w-xs"
             whileHover={{ scale: 1.05, y: -2 }}
             whileTap={{ scale: 0.95 }}
           >
@@ -233,20 +233,20 @@ const Hero = () => {
               whileHover={{ x: '100%' }}
               transition={{ duration: 0.6 }}
             />
-            <span className="relative z-10 flex items-center gap-2">
-              <Download size={20} />
+            <span className="relative z-10 flex items-center justify-center gap-2 text-sm sm:text-base">
+              <Download size={18} className="sm:w-5 sm:h-5" />
               Download Resume
             </span>
           </motion.button>
 
-          <div className="flex items-center gap-4">
+          <div className="flex items-center justify-center gap-3 sm:gap-4 flex-wrap">
             {socialLinks.map((social, index) => (
               <motion.a
                 key={social.label}
                 href={social.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-3 bg-white/10 backdrop-blur-sm border border-white/20 hover:bg-white/20 rounded-full transition-all duration-300 hover:scale-110 group shadow-lg hover:shadow-xl"
+                className="p-2.5 sm:p-3 bg-white/10 backdrop-blur-sm border border-white/20 hover:bg-white/20 rounded-full transition-all duration-300 hover:scale-110 group shadow-lg hover:shadow-xl"
                 whileHover={{ y: -3, rotateY: 180 }}
                 whileTap={{ scale: 0.95 }}
                 initial={{ opacity: 0, y: 20 }}
@@ -254,8 +254,8 @@ const Hero = () => {
                 transition={{ delay: 1.5 + index * 0.1 }}
               >
                 <social.icon 
-                  size={24} 
-                  className="text-gray-300 group-hover:text-white transition-colors" 
+                  size={20} 
+                  className="text-gray-300 group-hover:text-white transition-colors sm:w-6 sm:h-6" 
                 />
               </motion.a>
             ))}
@@ -268,16 +268,16 @@ const Hero = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 2, duration: 1 }}
-          className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
+          className="absolute bottom-4 sm:bottom-8 left-1/2 transform -translate-x-1/2"
         >
           <motion.button
             onClick={scrollToNext}
-            className="p-4 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full text-gray-300 hover:text-white hover:bg-white/20 transition-all duration-300 shadow-lg"
-            animate={{ y: [0, 10, 0] }}
+            className="p-2 sm:p-3 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full text-gray-300 hover:text-white hover:bg-white/20 transition-all duration-300 shadow-lg"
+            animate={{ y: [0, 6, 0] }}
             transition={{ duration: 2, repeat: Infinity }}
             whileHover={{ scale: 1.1 }}
           >
-            <ChevronDown size={20} />
+            <ChevronDown size={16} className="sm:w-4 sm:h-4" />
           </motion.button>
         </motion.div>
       </motion.div>
